@@ -1,5 +1,7 @@
 package com.leaftaps.testcases;
 
+
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -22,14 +24,15 @@ public class Login {
 	@Test
 	public void loginTests() throws IOException, InterruptedException {
 		
-		// RemoteWebDriver
-		EdgeOptions options = new EdgeOptions();
-		DesiredCapabilities dc = new DesiredCapabilities(options);
-		dc.setBrowserName("firefox");
-		//dc.setVersion("117.0");
+		
+	ChromeOptions options = new ChromeOptions();
+	options.addArguments("--remote-allow-origins=*");
+	DesiredCapabilities dc = new DesiredCapabilities(options);
+	dc.setBrowserName("chrome");
+	dc.setVersion("117.0");
 		//dc.setPlatform(Platform.LINUX);
 		
-		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://4.240.86.27:4447/wd/hub"), dc);
+		RemoteWebDriver driver = new  RemoteWebDriver(new URL("http://4.240.88.10:4444/"), dc);
 
 		//ChromeDriver driver = new ChromeDriver();
 		
